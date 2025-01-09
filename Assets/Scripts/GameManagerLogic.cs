@@ -11,6 +11,7 @@ public class GameManagerLogic : MonoBehaviour
     public int counter;
     public bool gameRunning = true;
     string gameOverText = "Game Over - Final score : ";
+    string restartText = "\nPress Z to restart";
 
     public void lose(){
         gameRunning = false;
@@ -28,7 +29,7 @@ public class GameManagerLogic : MonoBehaviour
     void Update()
     {
         if(!gameRunning){
-            score.text = gameOverText + counter.ToString();
+            score.text = gameOverText + counter.ToString() + restartText;
             if(Input.GetKey("z")){
                 gameRunning = true;
                 counter = 0;
